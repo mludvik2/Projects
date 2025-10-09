@@ -33,7 +33,11 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-username = input("username: ")
-password = input("password: ")
+username = input("Please provide your username: ").lower()
+password = input("Please provide your password: ")
 
-print(f"Hello {username}! Welcome to the app.")
+if users.get(username) != password:
+    print("You are not registered. Program terminated...")
+    quit()
+elif users.get(username) == password:
+    print(f"Hello {username.capitalize()}. Welcome to the Text Analyzer")
