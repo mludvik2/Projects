@@ -1,3 +1,5 @@
+import string
+
 users = {
     "bob": "123",
     "ann": "pass123",
@@ -33,11 +35,33 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-username = input("Please provide your username: ").lower()
-password = input("Please provide your password: ")
+username = input("username: ").lower()
+password = input("password: ")
 
 if users.get(username) != password:
-    print("You are not registered. Program terminated...")
+    print("Unregistered user, terminating the program..")
     quit()
-elif users.get(username) == password:
-    print(f"Hello {username.capitalize()}. Welcome to the Text Analyzer")
+
+print("-" * 60)
+
+print(f"Welcome to the app, {username}")
+print("We have 3 texts to be analyzed.")
+print("-" * 60)
+
+text_number = input(f"Enter a number btw. 1 and {len(TEXTS)} to select: ")
+if not text_number.isdigit():
+    print("Incorrect input, terminating program..")
+    quit()
+
+text_number = int(text_number)
+if not 1 <= text_number <= len(TEXTS):
+    print("The number is out of range, terminating program..")
+    quit()
+
+print("-" * 60)
+
+text = TEXTS[text_number - 1]
+words = [word.strip(string.punctuation) for word in text.split()]
+
+word_count = len(words)
+print(f"There are {word_count} words in the selected text.")
