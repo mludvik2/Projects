@@ -66,6 +66,7 @@ titlecase_count = 0
 uppercase_count = 0
 lowercase_count = 0
 numeric_count = 0
+sum_of_numbers = 0
 
 word_count = len(words)
 for w in words:
@@ -80,6 +81,9 @@ for w in words:
 for w in words:
     if w.isdigit():
         numeric_count += 1
+for w in words:
+    if w.isdigit():
+        sum_of_numbers += int(w)
 
         
 print(f"There are {word_count} words in the selected text.")
@@ -87,3 +91,6 @@ print(f"There are {titlecase_count} titlecase words.")
 print(f"There are {uppercase_count} upppercase words.")
 print(f"There are {lowercase_count} lowercase words.")
 print(f"There are {numeric_count} numeric strings.")
+print(f"The sum of all the numbers {sum_of_numbers}")
+
+print("-" * 60)
