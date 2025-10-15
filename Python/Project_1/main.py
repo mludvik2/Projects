@@ -62,6 +62,19 @@ print("-" * 60)
 
 text = TEXTS[text_number - 1]
 words = [word.strip(string.punctuation) for word in text.split()]
+titlecase_count = 0
+uppercase_count = 0
 
 word_count = len(words)
+for w in words:
+    if w.istitle():
+        titlecase_count += 1
+for w in words:
+    if w.isupper():
+        uppercase_count += 1
+
+        
 print(f"There are {word_count} words in the selected text.")
+print(f"There are {titlecase_count} titlecase words.")
+print(f"There are {uppercase_count} upppercase words.")
+There are 38 lowercase words.
