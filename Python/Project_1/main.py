@@ -47,7 +47,7 @@ print("-" * 40)
 
 print(f"Welcome to the app, {username}")
 print("We have 3 texts to be analyzed.")
-print("-" * 60)
+print("-" * 40)
 
 text_number = input(f"Enter a number btw. 1 and {len(TEXTS)} to select: ")
 if not text_number.isdigit():
@@ -97,7 +97,7 @@ print("-" * 40)
 
 lengths = Counter(len(word) for word in words)
 
-print("LEN|    OCCURENCES      |NR.    ")
+print(f"{'LEN':>3}| {'OCCURENCES':^18} |{'NR.':>3}")
 print("-" * 40)
 
 for length in sorted(lengths):
