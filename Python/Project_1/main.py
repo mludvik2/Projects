@@ -49,7 +49,9 @@ print(f"Welcome to the app, {username}")
 print("We have 3 texts to be analyzed.")
 print("-" * 40)
 
-text_number = input(f"Enter a number btw. 1 and {len(TEXTS)} to select: ")
+text_number = input(
+    f"Enter a number btw. 1 and {len(TEXTS)} to select: "
+)
 if not text_number.isdigit():
     print("Incorrect input, terminating program..")
     quit()
@@ -62,7 +64,11 @@ if not 1 <= text_number <= len(TEXTS):
 print("-" * 40)
 
 text = TEXTS[text_number - 1]
-words = [word.strip(string.punctuation) for word in text.split()]
+words = [
+    word.strip(string.punctuation)
+    for word in text.split()
+]
+
 titlecase_count = 0
 uppercase_count = 0
 lowercase_count = 0
