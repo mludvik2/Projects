@@ -97,5 +97,8 @@ print("-" * 40)
 
 lengths = Counter(len(word) for word in words)
 
-print("LEN|    OCCURENCES       |NR.    ")
+print("LEN|    OCCURENCES      |NR.    ")
 print("-" * 40)
+
+for length in sorted(lengths):
+    print(f"{length:>3}| {'*' * lengths[length]:<18} |{lengths[length]}")
