@@ -44,7 +44,6 @@ if users.get(username) != password:
     quit()
 
 print("-" * 40)
-
 print(f"Welcome to the app, {username}")
 print("We have 3 texts to be analyzed.")
 print("-" * 40)
@@ -63,7 +62,6 @@ if not 1 <= text_number <= len(TEXTS):
     quit()
 
 print("-" * 40)
-
 text = TEXTS[text_number - 1]
 words = [
     word.strip(string.punctuation)
