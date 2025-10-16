@@ -52,6 +52,7 @@ print("-" * 40)
 text_number = input(
     f"Enter a number btw. 1 and {len(TEXTS)} to select: "
 )
+
 if not text_number.isdigit():
     print("Incorrect input, terminating program..")
     quit()
@@ -76,26 +77,20 @@ numeric_count = 0
 sum_of_numbers = 0
 
 word_count = len(words)
-for w in words:
-    if w.istitle():
+for word in words:
+    if word.istitle():
         titlecase_count += 1
-for w in words:
-    if w.isupper():
+    elif word.isupper():
         uppercase_count += 1
-for w in words:
-    if w.islower():
+    elif word.islower():
         lowercase_count += 1
-for w in words:
-    if w.isdigit():
+    if word.isdigit():
         numeric_count += 1
-for w in words:
-    if w.isdigit():
-        sum_of_numbers += int(w)
-
-        
+        sum_of_numbers += int(word)
+     
 print(f"There are {word_count} words in the selected text.")
 print(f"There are {titlecase_count} titlecase words.")
-print(f"There are {uppercase_count} upppercase words.")
+print(f"There are {uppercase_count} uppercase words.")
 print(f"There are {lowercase_count} lowercase words.")
 print(f"There are {numeric_count} numeric strings.")
 print(f"The sum of all the numbers {sum_of_numbers}")
@@ -103,8 +98,11 @@ print("-" * 40)
 
 lengths = Counter(len(word) for word in words)
 
-print(f"{'LEN':>3}| {'OCCURENCES':^18} |{'NR.':>3}")
+print(f"{'LEN':>3}| {'OCCURRENCES':^18} |{'NR.':>3}")
 print("-" * 40)
 
 for length in sorted(lengths):
-    print(f"{length:>3}| {'*' * lengths[length]:<18} |{lengths[length]}")
+    print(
+        f"{length:>3}| {'*' * lengths[length]:<18} "
+        f"|{lengths[length]}"
+    )
