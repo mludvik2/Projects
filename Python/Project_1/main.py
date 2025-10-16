@@ -1,4 +1,5 @@
 import string
+from collections import Counter
 
 users = {
     "bob": "123",
@@ -35,14 +36,14 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-username = input("username: ").lower()
+username = input("username: ")
 password = input("password: ")
 
 if users.get(username) != password:
     print("Unregistered user, terminating the program..")
     quit()
 
-print("-" * 60)
+print("-" * 40)
 
 print(f"Welcome to the app, {username}")
 print("We have 3 texts to be analyzed.")
@@ -58,7 +59,7 @@ if not 1 <= text_number <= len(TEXTS):
     print("The number is out of range, terminating program..")
     quit()
 
-print("-" * 60)
+print("-" * 40)
 
 text = TEXTS[text_number - 1]
 words = [word.strip(string.punctuation) for word in text.split()]
@@ -92,5 +93,9 @@ print(f"There are {uppercase_count} upppercase words.")
 print(f"There are {lowercase_count} lowercase words.")
 print(f"There are {numeric_count} numeric strings.")
 print(f"The sum of all the numbers {sum_of_numbers}")
+print("-" * 40)
 
-print("-" * 60)
+lengths = Counter(len(word) for word in words)
+
+print("LEN|    OCCURENCES       |NR.    ")
+print("-" * 40)
