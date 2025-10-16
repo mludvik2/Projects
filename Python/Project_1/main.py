@@ -1,3 +1,10 @@
+"""project_1.py: 
+first project for Engeto Online Python Academy
+
+Author: Michaela Papadimitriu Ludvikova
+email: mludvik2@yahoo.com
+"""
+
 import string
 from collections import Counter
 
